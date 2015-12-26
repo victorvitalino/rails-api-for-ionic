@@ -1,0 +1,853 @@
+  [1m[36m (82.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (210.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBlogEntries (20151226155144)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "blog_entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151226155144"]]
+  [1m[35m (82.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 13:10:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 88ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2015-12-26 13:10:49 -0300
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (46.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (235.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.0ms)
+
+
+Started GET "/blog-entries" for 127.0.0.1 at 2015-12-26 13:10:58 -0300
+
+ActionController::RoutingError (No route matches [GET] "/blog-entries"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (26.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (52.6ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:11:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.5ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 2591ms (Views: 2572.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 13:11:44 -0300
+
+
+Started GET "/blog_entries/new" for 127.0.0.1 at 2015-12-26 13:11:46 -0300
+Processing by BlogEntriesController#new as HTML
+  Rendered blog_entries/_form.html.erb (118.7ms)
+  Rendered blog_entries/new.html.erb within layouts/application (125.3ms)
+Completed 200 OK in 162ms (Views: 150.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/blog_entries" for 127.0.0.1 at 2015-12-26 13:14:05 -0300
+Processing by BlogEntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cmOf4yky8SacaiAM9N9gQ0iJ9r2HLdA+DLw+mcn4JkMnTBWZpoOEsSqiQCTLTrMM/7iFKtNWHBI0KwxYdDNG1g==", "blog_entry"=>{"title"=>"Civil War Overview", "content"=>"The Civil War is the central event in America's historical consciousness. While the Revolution of 1776-1783 created the United States, the Civil War of 1861-1865 determined what kind of nation it would be. The war resolved two fundamental questions left unresolved by the revolution: whether the United States was to be a dissolvable confederation of sovereign states or an indivisible nation with a sovereign national government; and whether this nation, born of a declaration that all men were created with an equal right to liberty, would continue to exist as the largest slaveholding country in the world."}, "commit"=>"Create Blog entry"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "blog_entries" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Civil War Overview"], ["content", "The Civil War is the central event in America's historical consciousness. While the Revolution of 1776-1783 created the United States, the Civil War of 1861-1865 determined what kind of nation it would be. The war resolved two fundamental questions left unresolved by the revolution: whether the United States was to be a dissolvable confederation of sovereign states or an indivisible nation with a sovereign national government; and whether this nation, born of a declaration that all men were created with an equal right to liberty, would continue to exist as the largest slaveholding country in the world."], ["created_at", "2015-12-26 16:14:05.989144"], ["updated_at", "2015-12-26 16:14:05.989144"]]
+  [1m[35m (206.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/blog_entries/1
+Completed 302 Found in 216ms (ActiveRecord: 206.9ms)
+
+
+Started GET "/blog_entries/1" for 127.0.0.1 at 2015-12-26 13:14:06 -0300
+Processing by BlogEntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogEntry Load (0.3ms)[0m  [1mSELECT  "blog_entries".* FROM "blog_entries" WHERE "blog_entries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered blog_entries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 64ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:15:09 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blog_entries/new" for 127.0.0.1 at 2015-12-26 13:15:11 -0300
+Processing by BlogEntriesController#new as HTML
+  Rendered blog_entries/_form.html.erb (4.4ms)
+  Rendered blog_entries/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blog_entries" for 127.0.0.1 at 2015-12-26 13:15:52 -0300
+Processing by BlogEntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nvCFMT5njQfUdGTxUqXU6BTM7R9VWy7yzXhddETFEY7L3w9Lsdb4kGK8BNltNAeno/2eiAEg4t7172+1+Q5xGw==", "blog_entry"=>{"title"=>"Independent 23-year-old journalist uncovers truth about FBI spy planes running covert surveillance over U.S. cities ", "content"=>"(NaturalNews) In recent days, the mainstream media has focused on some rather inane things – events or occurrences that, given rising dangers in the world and the important issues facing our country, have virtually no impact or meaning whatsoever.\r\n\r\nTake the Bruce/Caitlyn Jenner \"story.\" For weeks, Americans have had to endure how \"brave\" and \"inspiring\" a 65-year-old man was for \"following his heart\" and electing to undergo sex change therapy. That he/she is a former Olympic champion is the reason given for this wall-to-wall coverage (and yes, the reality show is forthcoming) – that, and Jenner's relationship to another \"reality TV family,\" the Kardashians – even though Jenner hasn't competed in an Olympic event in decades.\r\n\r\nLearn more: http://www.naturalnews.com/050128_independent_journalism_FBI_spy_planes_government_surveillance.html#ixzz3vRbNpZYL"}, "commit"=>"Create Blog entry"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "blog_entries" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Independent 23-year-old journalist uncovers truth about FBI spy planes running covert surveillance over U.S. cities "], ["content", "(NaturalNews) In recent days, the mainstream media has focused on some rather inane things – events or occurrences that, given rising dangers in the world and the important issues facing our country, have virtually no impact or meaning whatsoever.\r\n\r\nTake the Bruce/Caitlyn Jenner \"story.\" For weeks, Americans have had to endure how \"brave\" and \"inspiring\" a 65-year-old man was for \"following his heart\" and electing to undergo sex change therapy. That he/she is a former Olympic champion is the reason given for this wall-to-wall coverage (and yes, the reality show is forthcoming) – that, and Jenner's relationship to another \"reality TV family,\" the Kardashians – even though Jenner hasn't competed in an Olympic event in decades.\r\n\r\nLearn more: http://www.naturalnews.com/050128_independent_journalism_FBI_spy_planes_government_surveillance.html#ixzz3vRbNpZYL"], ["created_at", "2015-12-26 16:15:52.395813"], ["updated_at", "2015-12-26 16:15:52.395813"]]
+  [1m[36m (224.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/blog_entries/2
+Completed 302 Found in 231ms (ActiveRecord: 225.0ms)
+
+
+Started GET "/blog_entries/2" for 127.0.0.1 at 2015-12-26 13:15:52 -0300
+Processing by BlogEntriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBlogEntry Load (0.2ms)[0m  SELECT  "blog_entries".* FROM "blog_entries" WHERE "blog_entries"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered blog_entries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:15:57 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blog_entries/new" for 127.0.0.1 at 2015-12-26 13:16:29 -0300
+Processing by BlogEntriesController#new as HTML
+  Rendered blog_entries/_form.html.erb (4.9ms)
+  Rendered blog_entries/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blog_entries" for 127.0.0.1 at 2015-12-26 13:16:47 -0300
+Processing by BlogEntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0tbeeivDIJ/L77ssbenF4BSxYL6krXnaMLkBFBhsLzSZNEDZx55Fcnn3sSOJnRYN2O2Fa7pectQVdbF7arQKQ==", "blog_entry"=>{"title"=>"Severe flooding in Britain prompts Boxing Day evacuations", "content"=>"Communities in Hebden Bridge, Mythamroyd and Sowerby Bridge are among the areas most affected by flooding disruption and emergency services are working in partnership in these and other locations.\r\n\r\nResidents whose properties have been flooded are being advised to go to stay in their homes if possible and to go to the upstairs of their properties. If they are in danger then they should ring 101 and not try and evacuate themselves.\r\n\r\nTheye are alos being advised to stay safe, not to dry and drive on roads which have been closed due to flooding and not to stand at the edge of rising flood waters.\r\n\r\nRest centres have been set up Halifax town centre, and at Todmorden Town Hall and Keighley Leisure Centre and flood levels are being monitored on the ground."}, "commit"=>"Create Blog entry"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "blog_entries" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Severe flooding in Britain prompts Boxing Day evacuations"], ["content", "Communities in Hebden Bridge, Mythamroyd and Sowerby Bridge are among the areas most affected by flooding disruption and emergency services are working in partnership in these and other locations.\r\n\r\nResidents whose properties have been flooded are being advised to go to stay in their homes if possible and to go to the upstairs of their properties. If they are in danger then they should ring 101 and not try and evacuate themselves.\r\n\r\nTheye are alos being advised to stay safe, not to dry and drive on roads which have been closed due to flooding and not to stand at the edge of rising flood waters.\r\n\r\nRest centres have been set up Halifax town centre, and at Todmorden Town Hall and Keighley Leisure Centre and flood levels are being monitored on the ground."], ["created_at", "2015-12-26 16:16:47.283498"], ["updated_at", "2015-12-26 16:16:47.283498"]]
+  [1m[35m (258.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/blog_entries/3
+Completed 302 Found in 266ms (ActiveRecord: 259.4ms)
+
+
+Started GET "/blog_entries/3" for 127.0.0.1 at 2015-12-26 13:16:47 -0300
+Processing by BlogEntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogEntry Load (0.2ms)[0m  [1mSELECT  "blog_entries".* FROM "blog_entries" WHERE "blog_entries"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered blog_entries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:16:50 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blog_entries.json" for 127.0.0.1 at 2015-12-26 13:17:25 -0300
+Processing by BlogEntriesController#index as JSON
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.json.jbuilder (96.9ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:17:40 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.5ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 13:26:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 27ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:26:22 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 309ms (Views: 304.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 13:48:37 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 402ms (Views: 383.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 13:48:38 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:05:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.6ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 1627ms (Views: 1537.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:05:15 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:14:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 364ms (Views: 345.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:14:53 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:32 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.3ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:33 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 14:16:34 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 14:27:53 -0300
+
+ActiveRecord::AdapterNotSpecified ('development' database is not configured. Available: ["default"]):
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:248:in `resolve_symbol_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:211:in `resolve_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:139:in `resolve'
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:169:in `spec'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
+  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
+  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (104.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 14:32:12 -0300
+
+Gem::LoadError (Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).):
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:177:in `rescue in spec'
+  activerecord (4.2.4) lib/active_record/connection_adapters/connection_specification.rb:174:in `spec'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:50:in `establish_connection'
+  activerecord (4.2.4) lib/active_record/railtie.rb:120:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `each'
+  activesupport (4.2.4) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+  activerecord (4.2.4) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
+  activerecord (4.2.4) lib/active_record/base.rb:26:in `<top (required)>'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (71.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 15:28:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 57ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 15:28:14 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 507ms (Views: 502.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blog_entries/1" for 127.0.0.1 at 2015-12-26 15:29:08 -0300
+Processing by BlogEntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogEntry Load (0.5ms)[0m  [1mSELECT  "blog_entries".* FROM "blog_entries" WHERE "blog_entries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered blog_entries/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 100ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blog_entries" for 127.0.0.1 at 2015-12-26 15:29:10 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:07:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 461ms (Views: 441.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.3ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:01 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.3ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:46 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:47 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 16:08:47 -0300
+
+
+Started GET "/blog_entries.json" for 127.0.0.1 at 2015-12-26 16:13:07 -0300
+Processing by BlogEntriesController#index as JSON
+  [1m[36mBlogEntry Load (10.5ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.json.jbuilder (536.2ms)
+Completed 200 OK in 560ms (Views: 547.7ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:13:41 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 843ms (Views: 840.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+Processing by BlogEntriesController#index as HTML
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 16:21:14 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-26 16:48:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogEntriesController#index as HTML
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 560ms (Views: 492.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/scaffolds.self-c155e0321557bb76eea78624b869072e1954b76b0d723ac46684d90a5972bbd0.css?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/blog_entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/blog_entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-26 16:48:32 -0300
+
+
+Started GET "/blog_entries.json" for 127.0.0.1 at 2015-12-26 16:49:12 -0300
+Processing by BlogEntriesController#index as JSON
+  [1m[36mBlogEntry Load (0.4ms)[0m  [1mSELECT "blog_entries".* FROM "blog_entries"[0m
+  Rendered blog_entries/index.json.jbuilder (18.1ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/1.json" for 127.0.0.1 at 2015-12-26 16:50:38 -0300
+
+ActionController::RoutingError (No route matches [GET] "/1.json"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (43.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (127.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (111.7ms)
+
+
+Started GET "/blog_entries.json" for 127.0.0.1 at 2015-12-26 16:50:48 -0300
+Processing by BlogEntriesController#index as JSON
+  [1m[35mBlogEntry Load (0.4ms)[0m  SELECT "blog_entries".* FROM "blog_entries"
+  Rendered blog_entries/index.json.jbuilder (3.6ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms)
